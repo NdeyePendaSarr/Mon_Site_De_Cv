@@ -692,7 +692,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
 
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
-
+    
     .header {
         flex-direction: column;
         padding: 5px;
@@ -705,7 +705,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .site-title {
-        font-size: 1.0rem;
+        font-size: 1rem;
     }
 
     .nav-links {
@@ -713,10 +713,22 @@ input[type="submit"]:hover , input[type="reset"]:hover
         gap: 10px;
         margin: 0;
         text-align: center;
+        width: 100%;  /* Ajouter cette ligne pour que les liens prennent toute la largeur */
     }
 
-    
-}  
+    .nav-link {
+        font-size: 1rem;
+        padding: 10px 20px;  /* Ajouter de l'espace autour des liens */
+        white-space: nowrap;  /* Empêcher les coupures de mots */
+    }
+
+    .nav-link a {
+        display: inline-block; /* Pour forcer les liens à ne pas se couper */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;  /* Ajouter des points de suspension si le texte est trop long */
+    }
+}
 
 /* Responsive du formulaire de contact */
 
