@@ -690,50 +690,71 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 }
 
-
-@media screen and (min-width: 480px) and (max-width: 768px) {
-
+/* Style sur le header, nav et logo pour les petits écrans (mobile) */
+@media screen and (max-width: 768px) {
     .header {
-        flex-direction: column;
-        padding: 5px;
-        width: 100%;
-        text-align: center; /* Centrer les éléments */
+        flex-direction: column; /* Empiler les éléments verticalement */
+        align-items: center; /* Centrer les éléments */
+        height: auto; /* Laisser la hauteur s'ajuster automatiquement */
+        padding: 10px 20px; /* Ajouter un peu de padding pour espacer les éléments */
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centrer le logo */
+        margin-bottom: 10px; /* Espacement sous le logo */
     }
 
     .logo {
-        width: 60px;
+        width: 60px; /* Réduire la taille du logo */
         height: 60px;
+        margin-right: 0; /* Enlever l'espacement à droite */
     }
 
     .site-title {
-        font-size: 15px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
+        color: white;
+        font-size: 1.2rem; /* Réduire la taille du titre pour mobile */
+        text-transform: uppercase;
+        font-weight: bold;
         margin: 0;
-        text-align: center;
-        width: 100%;  /* S'assurer que les liens prennent toute la largeur */
-        flex-wrap: wrap;  /* Permet aux éléments de se répartir sur plusieurs lignes */
+        text-align: center; /* Centrer le titre */
     }
 
-    .nav-link {
-        padding: 10px 15px;  /* Ajouter un peu plus d'espace autour des liens */
-        white-space: nowrap;  /* Empêcher la coupure de texte sur un mot */
-        overflow: hidden;  /* Masquer tout texte débordant */
-        text-overflow: ellipsis;  /* Ajouter des points de suspension pour le texte trop long */
-        font-size: 12px;  /* Ajuster la taille de la police */
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Empiler les éléments de la navigation */
+        padding: 0;
+        margin: 0;
+        width: 100%; /* S'assurer que la navigation prend toute la largeur */
+        text-align: center; /* Centrer les liens de navigation */
     }
 
-    .nav-link a {
-        display: inline-block; /* Forcer les liens à ne pas se couper */
-        white-space: nowrap;  /* Empêcher la coupure de texte sur un mot */
-        overflow: hidden;
-        text-overflow: ellipsis;  /* Points de suspension si le texte est trop long */
-        font-size: 12px; /* Ajuster la taille de la police des liens */
+    nav ul li {
+        margin: 5px 0; /* Réduire l'espace entre les éléments de la navigation */
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem; /* Réduire la taille de la police pour mobile */
+        color: white;
+        font-weight: bold;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+        padding: 10px; /* Ajouter du padding autour des liens pour les rendre cliquables */
+        display: block; /* Faire en sorte que chaque lien occupe toute la largeur */
+    }
+
+    nav ul li a.active {
+        border-bottom: 2px solid white; /* Souligner le lien actif */
+    }
+
+    nav ul li a:hover {
+        color: white;
+        border-bottom: 2px solid #ffcc00; /* Changer la couleur du survol */
     }
 }
+
 
 
 /* Responsive du formulaire de contact */
