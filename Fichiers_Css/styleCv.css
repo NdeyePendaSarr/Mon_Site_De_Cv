@@ -705,7 +705,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .site-title {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .nav-links {
@@ -718,7 +718,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .nav-link {
-        font-size: 1rem;
+        
         padding: 10px 20px;  /* Ajouter de l'espace autour des liens */
         white-space: nowrap;  /* Empêcher les coupures de mots */
     }
@@ -728,7 +728,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;  /* Ajouter des points de suspension si le texte est trop long */
-        font-size: 12px;
+        font-size: 8px;
     }
 }
 
