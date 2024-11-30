@@ -697,6 +697,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         flex-direction: column;
         padding: 5px;
         width: 100%;
+        text-align: center; /* Centrer les éléments */
     }
 
     .logo {
@@ -705,7 +706,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .site-title {
-        font-size: 0.8rem;
+        font-size: 15px;
     }
 
     .nav-links {
@@ -713,24 +714,27 @@ input[type="submit"]:hover , input[type="reset"]:hover
         gap: 10px;
         margin: 0;
         text-align: center;
-        width: 100%;  /* Ajouter cette ligne pour que les liens prennent toute la largeur */
-        
+        width: 100%;  /* S'assurer que les liens prennent toute la largeur */
+        flex-wrap: wrap;  /* Permet aux éléments de se répartir sur plusieurs lignes */
     }
 
     .nav-link {
-        
-        padding: 10px 20px;  /* Ajouter de l'espace autour des liens */
-        white-space: nowrap;  /* Empêcher les coupures de mots */
+        padding: 10px 15px;  /* Ajouter un peu plus d'espace autour des liens */
+        white-space: nowrap;  /* Empêcher la coupure de texte sur un mot */
+        overflow: hidden;  /* Masquer tout texte débordant */
+        text-overflow: ellipsis;  /* Ajouter des points de suspension pour le texte trop long */
+        font-size: 12px;  /* Ajuster la taille de la police */
     }
 
     .nav-link a {
-        display: inline-block; /* Pour forcer les liens à ne pas se couper */
-        white-space: nowrap;
+        display: inline-block; /* Forcer les liens à ne pas se couper */
+        white-space: nowrap;  /* Empêcher la coupure de texte sur un mot */
         overflow: hidden;
-        text-overflow: ellipsis;  /* Ajouter des points de suspension si le texte est trop long */
-        font-size: 8px;
+        text-overflow: ellipsis;  /* Points de suspension si le texte est trop long */
+        font-size: 12px; /* Ajuster la taille de la police des liens */
     }
 }
+
 
 /* Responsive du formulaire de contact */
 
