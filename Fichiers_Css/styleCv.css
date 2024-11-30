@@ -691,70 +691,73 @@ input[type="submit"]:hover , input[type="reset"]:hover
 }
 
 /* Style sur le header, nav et logo pour les petits écrans (mobile) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) 
+{
+
     .header {
-        flex-direction: column; /* Empiler les éléments verticalement */
-        align-items: center; /* Centrer les éléments */
-        height: auto; /* Laisser la hauteur s'ajuster automatiquement */
-        padding: 10px 20px; /* Ajouter un peu de padding pour espacer les éléments */
+        flex-direction: column; 
+        align-items: center; 
+        height: auto; 
+        padding: 10px 20px; 
     }
 
     .logo-container {
         display: flex;
         align-items: center;
-        justify-content: center; /* Centrer le logo */
-        margin-bottom: 10px; /* Espacement sous le logo */
-    }
+        justify-content: center; 
+        margin-bottom: 10px; 
+        width: 100%; 
 
     .logo {
-        width: 60px; /* Réduire la taille du logo */
+        width: 60px; 
         height: 60px;
-        margin-right: 0; /* Enlever l'espacement à droite */
+        margin-right: 0; 
+        object-fit: cover; 
+        border-radius: 50%; 
     }
 
     .site-title {
         color: white;
-        font-size: 1.2rem; /* Réduire la taille du titre pour mobile */
+        font-size: 1.2rem; 
         text-transform: uppercase;
         font-weight: bold;
         margin: 0;
-        text-align: center; /* Centrer le titre */
+        text-align: center; 
     }
 
     nav ul {
         display: flex;
-        flex-direction: column; /* Empiler les éléments de la navigation */
+        flex-direction: column; 
         padding: 0;
         margin: 0;
-        width: 100%; /* S'assurer que la navigation prend toute la largeur */
-        text-align: center; /* Centrer les liens de navigation */
+        width: 100%; 
+        text-align: center; 
     }
 
     nav ul li {
-        margin: 5px 0; /* Réduire l'espace entre les éléments de la navigation */
+        margin: 5px 0; 
     }
 
     nav ul li a {
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 0.9rem; /* Réduire la taille de la police pour mobile */
+        font-size: 0.9rem; 
         color: white;
         font-weight: bold;
         transition: color 0.3s ease, border-bottom 0.3s ease;
-        padding: 10px; /* Ajouter du padding autour des liens pour les rendre cliquables */
-        display: block; /* Faire en sorte que chaque lien occupe toute la largeur */
+        padding: 10px; 
+        display: block; 
     }
 
     nav ul li a.active {
-        border-bottom: 2px solid white; /* Souligner le lien actif */
+        border-bottom: 2px solid white; 
     }
 
     nav ul li a:hover {
         color: white;
-        border-bottom: 2px solid #ffcc00; /* Changer la couleur du survol */
+        border-bottom: 2px solid #ffcc00; 
     }
 }
-
 
 
 /* Responsive du formulaire de contact */
@@ -763,7 +766,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     .form {
         width: 90%;
         margin: 10px auto;
-        margin-bottom: 100px;
+        margin-bottom: 150px;
     }
 
     .form img {
@@ -773,7 +776,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     input[type="text"], input[type="email"], input[type="number"], textarea {
-        width: 80%;
+        width: 70%;
         margin: 10px 0;
     }
 
@@ -783,11 +786,18 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     input[type="submit"], input[type="reset"] {
-        width: 80%;
+        width: 70%;
         margin: 10px 0;
     }
     #lastname , #num , textarea , input[type="submit"], input[type="reset"]{
         margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #conteneur1 .right h1
+    {
+        font-size: 65px;
     }
 }
 
