@@ -673,6 +673,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
 /*Header, nav, logo du site */
 
 @media (max-width: 1200px) {
+
     .header {
         flex-direction: column;
         height: auto;
@@ -763,6 +764,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
 /* Responsive du formulaire de contact */
 
 @media (max-width: 768px) {
+
     .form {
         width: 90%;
         margin: 10px auto;
@@ -858,7 +860,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
 
     .coordonnees {
         width: 100%; 
-        margin: 0 auto; 
+        margin: 20 auto; 
         height: auto; 
         padding: 20px; 
         border-top-right-radius: 50px; 
