@@ -690,8 +690,11 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 }
 
-@media (max-width: 768px) {
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+
     .header {
+        flex-direction: column;
         padding: 5px;
     }
 
@@ -711,32 +714,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         text-align: center;
     }
 
-    .nav-link {
-        padding: 10px 5px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        flex-direction: column;
-        padding: 5px;
-    }
-
-    .logo {
-        width: 50px;
-        height: 50px;
-    }
-
-    .site-title {
-        font-size: 1rem;
-    }
-
-    .nav-link {
-        padding: 5px;
-        font-size: 0.9rem;
-    }
-
+    
 }  
 
 /* Responsive du formulaire de contact */
