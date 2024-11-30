@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CV professionnel de Ndeye Penda Sarr">
+    <link rel="stylesheet" href="Fichiers_Css/styleCv.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="Images/Logo-N-Bleu.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <title>Contact- NPS - CV</title>
+    
+</head>
+<body>
+      <!-- Header avec navigation et logo -->
+   <header class="header">
+        <div class="logo-container">
+            <img src="Images/initial-nps-modern-logo.jpg" alt="Logo gauche" class="logo">
+            <h1 class="site-title">CV - Professionnel</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Accueil.html" >Accueil</a></li>
+                <li><a href="A_propos.html" >À propos</a></li>
+                <li><a href="Loisir.html" >Loisirs</a></li>
+                <li><a href="Contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2 class="contact">Contactez-moi</h2>
+
+    <div class="form">
+            <!--Formulaire traité par Forms Pree-->
+            <form action="https://formspree.io/f/mjkvpavo" method="post">
+        
+                    <img src="Images/initial-nps-modern-logo.jpg" alt="logo">
+                    <p><input type="text" name="firstname" id="firstname" placeholder="Prenom" required="required" class="stylePlaceholder">
+                        <input type="text" name="lastname" id="lastname" placeholder="Nom" required="required" class="stylePlaceholder">
+                    </p>
+                    <p> <input type="email" name="email" id="email" placeholder="Email" required class="stylePlaceholder">
+                        <input type="number" name="num" id="num" placeholder="Telephone" min="750000000" max="789999999" required class="stylePlaceholder">
+                    </p>
+                    <textarea name="commentaire" id="comment" maxlength="700px" placeholder="Tapez votre message ici ..." class="textarea-placeholder"></textarea>
+                    <p>
+                        <input type="submit" id="envoyer" name="envoyer" value="Soumettre">
+                        <input type="reset" id="suprimer" name="suprimer" value="Annuler">
+                    </p>
+            </form>
+    </div>
+
+    <footer class="footer">
+        <ul class="footer-links">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+        </ul>
+        <p>&copy; 2024 Ndeye Penda Sarr | Tous droits réservés</p>
+    </footer>
+</body>
+</html>
