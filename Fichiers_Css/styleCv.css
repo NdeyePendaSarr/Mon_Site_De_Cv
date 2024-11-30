@@ -860,7 +860,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
 
     .coordonnees {
         width: 100%; 
-        margin: 20 auto; 
+        margin: 40px auto; 
         height: auto; 
         padding: 20px; 
         border-top-right-radius: 50px; 
@@ -915,7 +915,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .left img {
-        height: 350px;
+        height: 380px;
         margin: 25px auto;
         width: 170px;
         
