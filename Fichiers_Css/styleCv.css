@@ -692,7 +692,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
 
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
-    
+
     .header {
         flex-direction: column;
         padding: 5px;
@@ -714,6 +714,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin: 0;
         text-align: center;
         width: 100%;  /* Ajouter cette ligne pour que les liens prennent toute la largeur */
+        
     }
 
     .nav-link {
@@ -727,6 +728,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;  /* Ajouter des points de suspension si le texte est trop long */
+        font-size: 12px;
     }
 }
 
