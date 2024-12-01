@@ -788,7 +788,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     input[type="submit"], input[type="reset"] {
-        width: 77%;
+        width: 76%;
         margin: 10px 0;
     }
     #lastname , #num , textarea , input[type="submit"], input[type="reset"]{
