@@ -107,14 +107,12 @@ nav ul li a:hover {
     margin-left: -4px;
 }
 
-.left img
-{
+.left img {
     height: 220px;
     border: 10px solid #cfe2ff;
     border-radius: 50%;
     margin: 35px;
-    
-
+    object-fit: cover; /* Cette propriété permet de préserver les proportions sans déformer l'image */
 }
 .right h1
 {
@@ -878,13 +876,13 @@ input[type="submit"]:hover , input[type="reset"]:hover
     .coordonnees h4 {
         font-size: 16px; 
         margin-left: 10px; 
-        text-align: center; 
+        text-align: left; 
     }
 
     .coordonnees ul li {
         font-size: 12px; 
         margin-bottom: 15px; 
-        text-align: center; 
+        text-align: left; 
     }
 
     .coordonnees ul li i {
@@ -902,13 +900,17 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .langue-item span {
-        margin: 0px auto; 
+        margin-bottom: 0px ; 
+        margin-top: 0px ; 
         font-size: 12px; 
+        margin-left: -150px;
     }
 
     .progress-bar {
         width: 40px; 
-        margin: 0px auto;
+        margin-left: -10px;
+        margin-top: -15px;
+        background-color: white;
     }
 
     .progress {
@@ -923,27 +925,32 @@ input[type="submit"]:hover , input[type="reset"]:hover
         display: none;
     }
 
+     /* Taille d'image ajustée pour mobile */
     .left img {
-        height: 380px;
-        margin: 25px auto;
-        width: 170px;
-        
+        height: 190px; /* Taille réduite pour mobile */
+        width: 130px; /* Maintien la largeur égale à la hauteur */
+        margin: 25px auto; /* Centrage de l'image */
+      
     }
-
     .right h1 {
         font-size: 35px;
         margin-top: 20px;
         text-align: center;
+        font-weight: normal;
     }
 
     .right p {
         font-size: 18px;
-        margin: 10px 0;
+        margin-top: 5px;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: -30px;
         text-align: center;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1124px) {
+
     #conteneur
     {
         margin-bottom: 100px;
@@ -1060,54 +1067,39 @@ input[type="submit"]:hover , input[type="reset"]:hover
     .color {
         display: none;
     }
-
-    .formation {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;   
-        padding: 0 10px;      
-    }
-
-    .formation h2 {
-        font-size: 20px;        
-        text-align: center;     
+    .formation h2, .formation .projets {
+        font-size: 20px;
+        margin: 0 auto;
+        text-align: center;
         margin-bottom: 20px;
+        font-weight: normal;
     }
 
     .formation-item {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;    
-        margin-bottom: 15px;   
-        width: 100%;            
-        padding-bottom: 15px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .fleft, .fright {
-        text-align: center;     
-        width: 100%;            
+    .fleft h3, .fleft .universite, .fleft ul li {
+        padding-left: 0;
+        width: 100%;
     }
 
-    .fleft h3, .fright h3 {
-        font-size: 18px;     
+    .fright {
+        text-align: left;
+        margin-top: 10px;
     }
 
-    .universite, .date {
-        font-size: 14px;       
-        margin-top: 5px;      
+    .fright h3, .fright .date {
+        margin-left: 0;
+        font-size: 12px;
     }
-
-    h2, h3 {
-        font-size: 18px;
-    }
-
-    ul {
-        font-size: 14px;
-    }
+    
 
     #image {
         width: 70px;
     }
+   
 }
 
 @media (max-width: 768px) {
