@@ -927,9 +927,10 @@ input[type="submit"]:hover , input[type="reset"]:hover
 
      /* Taille d'image ajustée pour mobile */
     .left img {
-        height: 190px; /* Taille réduite pour mobile */
-        width: 130px; /* Maintien la largeur égale à la hauteur */
+        height: 200px; /* Taille réduite pour mobile */
+        width: 135px; /* Maintien la largeur égale à la hauteur */
         margin: 25px auto; /* Centrage de l'image */
+        
       
     }
     .right h1 {
@@ -1073,7 +1074,14 @@ input[type="submit"]:hover , input[type="reset"]:hover
         text-align: center;
         margin-bottom: 20px;
         font-weight: normal;
+        
     }
+    .Qualites
+    {
+        font-weight: normal;
+        
+    }
+   
 
     .formation-item {
         flex-direction: column;
@@ -1098,6 +1106,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
 
     #image {
         width: 70px;
+       
     }
    
 }
@@ -1121,6 +1130,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     #image {
         width: 80px;
     }
+    
 }
 
 @media (max-width: 815px) {
