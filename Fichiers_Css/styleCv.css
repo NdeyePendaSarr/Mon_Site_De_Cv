@@ -913,7 +913,9 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin-top: -15px;
         background-color: white;
     }
-
+    .header , .footer{
+        width: 100%;
+    }
     .progress {
         height: 8px; 
     }
@@ -926,7 +928,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         display: none;
     }
     .left {
-        width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur */
+        width: 90%; /* Assurez-vous que le conteneur occupe toute la largeur */
         text-align: center; /* Optionnel, selon le besoin */
     }
      /* Taille d'image ajustée pour mobile */
