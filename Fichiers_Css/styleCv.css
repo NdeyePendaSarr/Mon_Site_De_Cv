@@ -866,7 +866,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .coordonnees {
-        width: 80%; 
+        width: 85%; 
         margin: 40px auto; 
         height: auto; 
         padding: 20px; 
@@ -904,12 +904,12 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin-bottom: 0px ; 
         margin-top: 0px ; 
         font-size: 12px; 
-        margin-left: -255px;
+        margin-left: -205px;
     }
 
     .progress-bar {
         width: 40px; 
-        margin-left: -100px;
+        margin-left: -40px;
         margin-top: -15px;
         background-color: white;
     }
@@ -928,7 +928,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         display: none;
     }
     .left {
-        width: 90%; /* Assurez-vous que le conteneur occupe toute la largeur */
+        width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur */
         text-align: center; /* Optionnel, selon le besoin */
     }
      /* Taille d'image ajustée pour mobile */
@@ -955,6 +955,17 @@ input[type="submit"]:hover , input[type="reset"]:hover
     .Image {
         text-align: center; 
         margin: 75px 0;
+    }
+    .footer-links {
+        gap: 15px; /* Réduit l'espacement entre les icônes */
+    }
+
+    .footer-links li a {
+        font-size: 20px; /* Réduit la taille des icônes sur les petits écrans */
+    }
+
+    .footer p {
+        font-size: 12px; /* Réduit la taille du texte */
     }
 }
 
