@@ -866,7 +866,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .coordonnees {
-        width: 80%; 
+        width: 75%; 
         margin: 40px auto; 
         height: auto; 
         padding: 20px; 
@@ -904,7 +904,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin-bottom: 0px ; 
         margin-top: 0px ; 
         font-size: 12px; 
-        margin-left: -210px;
+        margin-left: -200px;
     }
 
     .progress-bar {
