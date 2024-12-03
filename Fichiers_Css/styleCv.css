@@ -209,7 +209,7 @@ h4{
 
 /* Barre de progression */
 .progress-bar {
-    background-color: #e6e6e6;
+    background-color: white;
     height: 10px;
     border-radius: 5px;
     margin-right: 25px;
@@ -855,7 +855,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
 
 @media (max-width: 768px) {
 
-    #conteneur {
+    body #conteneur {
         border: none;
         margin-bottom: 100px;
         width: 100%; 
@@ -866,7 +866,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .coordonnees {
-        width: 85%; 
+        width: 80%; 
         margin: 40px auto; 
         height: auto; 
         padding: 20px; 
@@ -904,7 +904,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin-bottom: 0px ; 
         margin-top: 0px ; 
         font-size: 12px; 
-        margin-left: -205px;
+        margin-left: -210px;
     }
 
     .progress-bar {
@@ -913,7 +913,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin-top: -15px;
         background-color: white;
     }
-    .header , .footer{
+    body .footer{
         width: 100%;
     }
     .progress {
@@ -956,17 +956,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         text-align: center; 
         margin: 75px 0;
     }
-    .footer-links {
-        gap: 15px; /* Réduit l'espacement entre les icônes */
-    }
-
-    .footer-links li a {
-        font-size: 20px; /* Réduit la taille des icônes sur les petits écrans */
-    }
-
-    .footer p {
-        font-size: 12px; /* Réduit la taille du texte */
-    }
+   
 }
 
 @media (min-width: 768px) and (max-width: 1124px) {
@@ -1095,6 +1085,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
         font-weight: normal;
         
     }
+   
     .Qualites
     {
         font-weight: normal;
