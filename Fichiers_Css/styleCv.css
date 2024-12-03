@@ -866,7 +866,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .coordonnees {
-        width: 100%; 
+        width: 80%; 
         margin: 40px auto; 
         height: auto; 
         padding: 20px; 
