@@ -5,6 +5,7 @@ body {
     font-family: "Century Gothic", Verdana, sans-serif;
     background-color: #ffffff;
     box-sizing: border-box;
+    overflow: scroll;
 }
 /*Style sur le header, nav et logo y compris */
 .header {
@@ -70,26 +71,70 @@ nav ul li a:hover {
     color: white;
     border-bottom: 2px solid #ffcc00;
 }
-/* Style sur le conteneur principal de la page Accueil.html */
+
+/* Style du footer des pages */
+
+.footer {
+    background-color: #0F056B;
+    color: #ffffff; 
+    text-align: center; 
+    padding: 20px 0;
+    border-top: 4px solid #cfe2ff; 
+}
+
+/* Centrage des icônes du footer */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0; 
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.footer-links li a {
+    color: #ffffff; 
+    font-size: 24px; 
+    transition: color 0.3s ease; 
+}
+
+.footer-links li a:hover {
+    color: #ffcc00; 
+}
+
+/* Paragraphe en dessous des icônes du footer*/
+.footer p {
+    font-size: 14px;
+    margin-top: 15px; 
+}
 
 #conteneur {
-    width: 80%;
-    height: 1269px; 
-    border: 2px solid #0F056B;
+    
+    height: 1350px; 
+    border: 4px solid #0F056B;
     margin: 30px auto;
     display: flex;
     position: relative; 
     align-items: flex-start;
     justify-content: space-between;
+    width: 1070px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    
+}
+#conteneur:hover
+{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 /* Style sur le trait vertical separant les elements de gauche et ceux de droite de la page d'accueil*/
 
 .vertical-line {
     width: 3px; 
-    height: 69%; 
+    height: 71%; 
     position: absolute; 
-    left: 38%; 
+    left: 39%; 
     transform: translateX(-40%); 
     background-color: #cfe2ff; 
     margin: 0 10px; 
@@ -139,7 +184,7 @@ nav ul li a:hover {
     background-color: #0F056B;
     height: 280px;
     position: relative;
-    width: 450px;
+    width: 490px;
     border: 1px solid #0F056B;
     border-bottom-left-radius: 250px;
    
@@ -148,10 +193,10 @@ nav ul li a:hover {
 
 .coordonnees
 {
-    width: 300px;
+    width: 315px;
     background-color: #cfe2ff;
     padding-top: 45px;
-    height: 902px;
+    height: 983px;
     border: 1px solid #cfe2ff;
     border-top-right-radius: 250px;
     padding-bottom: 5px;
@@ -190,7 +235,6 @@ h4{
 .langues li {
     margin-bottom: 10px;
 }
-
 /* Alignement des langues et des barres de progression */
 .langue-item {
     display: flex;
@@ -206,7 +250,6 @@ h4{
     flex-shrink: 0; 
     margin-left: 40px;
 }
-
 /* Barre de progression */
 .progress-bar {
     background-color: white;
@@ -225,7 +268,6 @@ h4{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     
 }
-
 /* Section Formation de la page Accueil.html */
 
 .formation {
@@ -264,8 +306,6 @@ h4{
     align-items: center; 
     margin-bottom: 15px; 
 }
-
-
 .fright {
     text-align: right; 
     flex-shrink: 0; 
@@ -307,7 +347,6 @@ h4{
     margin-top: 2px;
     
 }
-
 .fleft .universite
 {
     text-transform: capitalize;
@@ -347,74 +386,91 @@ h4{
     margin-top: -28px;
     padding: 0px;
 }
-.liste-qualites li
-{
+/* Section des Qualités */
+.qualites-container {
+    display: flex;
+    align-items: center; /* Pour aligner verticalement les éléments */
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+/* Titre des Qualités */
+.Qualites {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #0F056B;
+    margin-bottom: 20px;
+    margin-left: 150px;
+  
+}
+
+/* Liste des Qualités */
+.liste-qualites {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     color: #0F056B;
     font-size: 14px;
     font-style: normal;
-    margin-bottom: 25px;
-    position: relative;
-    left: 87%;
+    margin-left: 150px;
 }
-#image 
-{
+
+.liste-qualites li {
+    margin-bottom: 20px;
+}
+
+/* Image QR Code */
+#image {
+    margin-top: 50px;
     width: 150px;
     height: 138px;
-    padding-left: 150px;
-    margin-top: -168px;   
-    margin-bottom: 80px;
+    margin-left: 21px; /* Ajout de l'espace entre l'image et la liste */
+    object-fit: cover; /* Pour que l'image conserve ses proportions sans être déformée */
 }
-/* Style du footer des pages */
-
-.footer {
-    background-color: #0F056B;
-    color: #ffffff; 
-    text-align: center; 
-    padding: 20px 0;
-    border-top: 4px solid #cfe2ff; 
-}
-
-/* Centrage des icônes du footer */
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0; 
-    display: flex;
-    justify-content: center; 
-    gap: 20px; 
+.qualites-container .pdf
+{
+    margin-top: -187px;
+    margin-right: -459px;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    color: #0F056B;
 }
 
-.footer-links li a {
-    color: #ffffff; 
-    font-size: 24px; 
-    transition: color 0.3s ease; 
+/* Mobile - Mise en place de la disposition en colonne */
+@media (max-width: 768px) {
+    .qualites-container {
+        flex-direction: column; /* Passe en colonne pour les petits écrans */
+        align-items: center;
+    }
+
+    #image {
+        margin-left: 0;
+        margin-top: 20px; /* Espace au-dessus de l'image */
+    }
 }
 
-.footer-links li a:hover {
-    color: #ffcc00; 
-}
-
-/* Paragraphe en dessous des icônes du footer*/
-.footer p {
-    font-size: 14px;
-    margin-top: 15px; 
-}
 
 
 /* Conteneur principal de la page A propos */
-
 #conteneur1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
-   
     margin-top: 5px;
+    width: 90%;
+    
 }
 
 /* Titre du conteneur principal */
 #conteneur1 .right h1 {
-    font-size: 73px;
+    font-size: 5.5rem; /* Taille en rem pour plus de flexibilité */
     color: #0F056B;
     text-align: center;
     margin-top: 10px;
@@ -422,18 +478,18 @@ h4{
 }
 
 #conteneur1 .right p {
-    font-size: 23px;
+    font-size: 1.75rem; /* Taille en rem pour plus de flexibilité */
     color: #0F056B;
     text-align: center;
     font-weight: normal;
     margin-bottom: 40px;
-    
+  
 }
 
 /* Sections */
 .section1, .section2, .section3 {
-    width: 80%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1250px;
     padding: 30px;
     background-color: #ffffff;
     border-radius: 10px;
@@ -442,9 +498,9 @@ h4{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Effet au survol des sections */
-.section1:hover, .section2:hover, .section3:hover , .parent:hover , .parent1:hover , .parent2:hover , .parent3:hover , #conteneur:hover{
-    transform: scale(1.02);
+/* Effet au survol des sections et projets */
+.section1:hover, .section2:hover, .section3:hover, .project-item:hover {
+    transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -487,6 +543,194 @@ h4{
     color: #444;
 }
 
+/* Conteneur des projets */
+
+.projects-container {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    width: 1450px;
+}
+#conteneur1 .section4 h2
+{
+    font-size: 2.5rem; /* Taille en rem pour plus de flexibilité */
+    color: #0F056B;
+    text-align: center;
+    margin-top: 10px;
+}
+#conteneur1 .section4 p{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Élément de projet */
+.project-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 605px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+    margin-left: 70px;
+}
+.project-item button
+{
+    margin-top: 30px;
+    background-color: #0F056B;
+    border: 1px solid #0F056B;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    
+}
+.project-item button a 
+{
+    color: white;
+    text-decoration: none;
+}
+.project-item button:hover
+{
+    
+    background-color: rgb(240, 157, 5);
+    border: 1px solid rgb(240, 157, 5) ;
+   
+}
+.project-item button a:hover
+{
+    text-decoration: none;
+    color: white;
+}
+
+/* Image du projet */
+.project-image {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.project-item:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-item h3 {
+    font-size: 1.25rem;
+    color: #34495e;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Lien de vue */
+.view-link {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.view-link:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* Section 4 */
+.section4 {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.section4 h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.section4 p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+/* Section 5 */
+.section5 ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section5 li {
+    margin-bottom: 10px;
+}
+
+/* Section 6 */
+.section6 {
+    background-color: #f8f9fa;
+    padding: 40px;
+    text-align: center;
+}
+
+.section6 h2 {
+    font-size: 2.5rem;
+    color: #0F056B;
+    margin-bottom: 15px;
+}
+
+.section6 p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Témoignages */
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-image {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    color: #34495e;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+}
 
 /* Style du conteneur de la page Loisir.html */
 
@@ -521,16 +765,19 @@ h4{
 }
 
 .parent1 {
+    
+    
     border-left: 5px solid #ffcc00;
     background-color: #f7f8fc;
 }
 
 .parent2 {
-    border-left: 5px solid #0F056B;
+    border-left: 5px solid #ffcc00;
+    
 }
 
 .parent3 {
-    border-left: 5px solid #ffcc00;
+    border-left: 5px solid #0F056B;
     background-color: #f7f8fc;
 }
 
@@ -554,12 +801,43 @@ h4{
     justify-content: center;
     align-items: center;
 }
+.image img:hover 
+{
+    transform: scale(0.9);
+}
+.image img
+{
+    width: 100%;
+    
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
  
-.Images img {
+.Images img{
     width: 100%;
     height: auto;
     object-fit: contain;
     object-position: center;
+    transition: transform 0.3s ease;
+   
+}
+.Images img:hover{
+    transform: scale(0.9);
+}
+video
+{
+    transition: transform 0.3s ease;
+}
+iframe{
+    transition: transform 0.3s ease;
+}
+iframe:hover{
+    transform: scale(0.9);
+}
+video:hover 
+{
+    transform: scale(0.9);
 }
 /* Style pour les textes en span  */
 span {
@@ -684,579 +962,3 @@ input[type="submit"]:hover , input[type="reset"]:hover
 }
 
 
-/*Aspect Responsive du site grace aux medias query */
-
-/*Header, nav, logo du site */
-
-@media (max-width: 1200px) {
-
-    .header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .logo-container {
-        justify-content: center;
-        margin-bottom: 10px;
-    }
-
-    .site-title {
-        font-size: 1.5rem;
-    }
-}
-
-/* Style sur le header, nav et logo pour les petits écrans (mobile) */
-@media screen and (max-width: 768px) 
-{
-
-    .header {
-        flex-direction: column; 
-        align-items: center; 
-        height: auto; 
-        padding: 10px 20px; 
-    }
-
-    .logo-container {
-        display: flex;
-        align-items: center;
-        justify-content: center; 
-        margin-bottom: 10px; 
-        width: 100%; 
-    }
-    .logo {
-        width: 60px; 
-        height: 60px;
-        margin-right: 0; 
-        object-fit: cover; 
-        border-radius: 50%; 
-    }
-
-    .site-title {
-        color: white;
-        font-size: 1.2rem; 
-        text-transform: uppercase;
-        font-weight: bold;
-        margin: 0;
-        text-align: center; 
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column; 
-        padding: 0;
-        margin: 0;
-        width: 100%; 
-        text-align: center; 
-    }
-
-    nav ul li {
-        margin: 5px 0; 
-    }
-
-    nav ul li a {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 0.9rem; 
-        color: white;
-        font-weight: bold;
-        transition: color 0.3s ease, border-bottom 0.3s ease;
-        padding: 10px; 
-        display: block; 
-    }
-
-    nav ul li a.active {
-        text-decoration: underline;
-        border: none;
-        padding-top: 5px;
-    
-    }
-
-    
-}
-
-
-/* Responsive du formulaire de contact */
-
-@media (max-width: 768px) {
-
-    .form {
-        width: 90%;
-        margin: 10px auto;
-        margin-bottom: 150px;
-    }
-
-    .form img {
-        width: 80px;
-        height: 80px;
-        margin-top: 10px;
-    }
-
-    input[type="text"], input[type="email"], input[type="number"], textarea {
-        width: 70%;
-        margin: 10px 0;
-    }
-
-    .form p {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    input[type="submit"], input[type="reset"] {
-        width: 76%;
-        margin: 10px 0;
-    }
-    #lastname , #num , textarea , input[type="submit"], input[type="reset"]{
-        margin-left: 40px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #conteneur1 .right h1 
-    {
-        font-size: 65px;
-    }
-    #conteneur1 .right p{
-        font-size: 14px;
-      
-    }
-    .section3
-    {
-        margin-bottom: 100px;
-    }
-    .section1
-    {
-        margin-top: 20px;
-    }
-    .section1 p, .section2 p, .section3 p {
-        font-size: 1rem; /* Réduction de la taille de la police */
-        line-height: 1.5; /* Ajustement de l'espacement */
-        text-align: left; /* Alignement à gauche */
-    }
-
-}
-
-
-/* Media Query pour les petits écrans page Loisir*/
-
-@media screen and (max-width: 768px) {
-    .parent, .parent1, .parent2, .parent3 {
-        flex-direction: column; 
-        
-    }
-    .image {
-        position: relative;
-        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
-        height: 0;
-        overflow: hidden;
-        max-width: 100%;
-        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
-    }
-    
-    .image iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .parent2 .Images, .parent3 .Images {
-        width: 100%; /* Prend toute la largeur sur mobile */
-        margin-bottom: 20px; /* Espacement si nécessaire */
-    }
-    
-    .parent .texte, .parent1 .texte, .parent2 .texte, .parent3 .texte {
-        width: 95%;
-        padding: 15px;
-        font-size: 1rem; /* Réduction de la taille de la police */
-        line-height: 1.5; /* Ajustement de l'espacement */
-        text-align: left; /* Alignement à gauche */
-    }
-
-    .parent .image, .parent1 .image, .parent2 .image, .parent3 .image {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Media Query pour les tablettes page  Loisir.html*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .parent, .parent1, .parent2, .parent3 {
-        flex-direction: column;
-    }
-
-    .parent .texte, .parent1 .texte, .parent2 .texte, .parent3 .texte {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .parent .image, .parent1 .image, .parent2 .image, .parent3 .image {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/*Responsive de la page Accueil.html*/
-
-
-@media (max-width: 768px) {
-
-    body #conteneur {
-        border: none;
-        margin-bottom: 100px;
-        width: 100%; 
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-        padding: 10px;
-    }
-
-    .coordonnees {
-        width: 75%; 
-        margin: 40px auto; 
-        height: auto; 
-        padding: 20px; 
-        border-top-right-radius: 50px; 
-    }
-
-    .coordonnees h4 {
-        font-size: 16px; 
-        margin-left: 10px; 
-        text-align: left; 
-    }
-
-    .coordonnees ul li {
-        font-size: 12px; 
-        margin-bottom: 15px; 
-        text-align: left; 
-        margin-left: -5px;
-    }
-
-    .coordonnees ul li i {
-        padding-right: 10px; 
-    }
-
-    .langues li {
-        margin-bottom: 5px; 
-    }
-
-    .langue-item {
-        flex-direction: column; 
-        align-items: center;
-        gap: 5px; 
-    }
-
-    .langue-item span {
-        margin-bottom: 0px ; 
-        margin-top: 0px ; 
-        font-size: 12px; 
-        margin-left: -196px;
-    }
-
-    .progress-bar {
-        width: 40px; 
-        margin-left: -40px;
-        margin-top: -15px;
-        background-color: white;
-    }
-    body .footer{
-        width: 100%;
-    }
-    .progress {
-        height: 8px; 
-    }
-
-    .vertical-line {
-        display: none; 
-    }
-
-    .color {
-        display: none;
-    }
-    .left {
-        width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur */
-        text-align: center; /* Optionnel, selon le besoin */
-    }
-     /* Taille d'image ajustée pour mobile */
-     .left img {
-        height: 200px;
-        width: 135px;
-        margin: 25px 0; /* Supprimez le `auto` pour éviter un centrage forcé */
-    }
-    .right h1 {
-        font-size: 35px;
-        margin-top: 20px;
-        text-align: center;
-        font-weight: normal;
-    }
-
-    .right p {
-        font-size: 18px;
-        margin-top: 5px;
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: -30px;
-        text-align: center;
-    }
-    .Image {
-        text-align: center; 
-        margin: 75px 0;
-    }
-   
-}
-
-@media (min-width: 768px) and (max-width: 1124px) {
-
-    #conteneur
-    {
-        margin-bottom: 100px;
-        margin-top: 100px;
-    }
-
-    .coordonnees {
-        width: 80%; 
-        margin: 20px auto; 
-        height: auto; 
-        padding: 30px; 
-        border-top-right-radius: 100px; 
-    }
-
-    .coordonnees h4 {
-        font-size: 18px; 
-        margin-left: 20px; 
-        text-align: left; 
-    }
-
-    .coordonnees ul li {
-        font-size: 14px; 
-        margin-bottom: 20px; 
-        text-align: left; 
-    }
-
-    .coordonnees ul li i {
-        padding-right: 12px; 
-    }
-
-    .langues li {
-        margin-bottom: 10px; 
-    }
-
-    .langue-item {
-        flex-direction: row; 
-        align-items: center; 
-        gap: 15px; 
-    }
-
-    .langue-item span {
-        font-size: 14px; 
-        margin-left: 40; 
-    }
-
-    .progress-bar {
-        width: 60px; 
-    }
-
-    .progress {
-        height: 10px; 
-    }
-}
-
-
-/* Écrans intermédiaires (tablettes) page Accueil.html*/
-
-@media (max-width: 1275px) {
-    #conteneur {
-        width: 90%; 
-        flex-direction: column; 
-        align-items: center;
-        justify-content: center;
-        height: auto;
-    }
-
-    .vertical-line {
-        display: none; 
-    }
-    .color{
-        display: none;
-    }
-    .left img {
-        height: 180px;
-        margin: 20px;
-    }
-
-    .right h1 {
-        margin-left: 0;
-        margin-top: 50px;
-        font-size: 50px;
-        text-align: center;
-    }
-
-    .right p {
-        margin-left: 0;
-        text-align: center;
-    }
-}
-
-/* Responsive Très petits écrans (téléphones compacts) */
-@media (max-width: 480px) {
-
-    #conteneur {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 5px;
-    }
-
-    .left img {
-        height: 120px;
-    }
-
-    .right h1 {
-        font-size: 25px;
-        margin-top: 10px;
-    }
-
-    .right p {
-        font-size: 14px;
-    }
-
-    .color {
-        display: none;
-    }
-    .formation h2, .formation .projets {
-        font-size: 20px;
-        margin: 0 auto;
-        text-align: center;
-        margin-bottom: 20px;
-        font-weight: normal;
-        
-    }
-   
-    .Qualites
-    {
-        font-weight: normal;
-        
-    }
-   
-
-    .formation-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .fleft h3, .fleft .universite, .fleft ul li {
-        padding-left: 0;
-        width: 100%;
-    }
-
-    .fright {
-        text-align: left;
-        margin-top: 10px;
-    }
-
-    .fright h3, .fright .date {
-        margin-left: 0;
-        font-size: 12px;
-    }
-    
-
-    #image {
-        width: 70px;
-       
-    }
-   
-}
-
-@media (max-width: 768px) {
-
-    .formation-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .fright {
-        text-align: left;
-        margin-top: 10px;
-    }
-
-    ul {
-        padding-left: 15px;
-    }
-
-    #image {
-        width: 80px;
-    }
-    
-}
-
-@media (max-width: 815px) {
-
-    #image {
-    width: 100px; 
-    margin: 20px auto; 
-    padding: 0; 
-    display: block; 
-    position: static; 
-    height: auto; 
-    
-    }
-    .formation {
-        margin-top: 50px; 
-        padding: 0px 15px; 
-    }
-
-    .formation h2,
-    .formation .projets, .Qualites
-     {
-        font-size: 18px; 
-        text-align: center; 
-        margin: 20px 0;
-    }
-    .Image {
-        text-align: center; 
-        margin: 50px 0;
-    }
-    
-    .formation-item {
-        flex-direction: column; 
-        align-items: flex-start; 
-        margin-bottom: 20px;
-    }
-
-    .fleft, .fright {
-        text-align: left; 
-        margin: 0; 
-    }
-
-    .fleft h3, 
-    .fleft p, 
-    .fright h3, 
-    .fright .date {
-        font-size: 12px; 
-        padding: 0; 
-        margin: 5px 0; 
-    }
-
-    .fleft ul li {
-        width: auto; 
-        margin-left: 0; 
-        font-size: 12px; 
-    }
-
-    .liste-qualites li {
-        font-size: 12px; 
-        margin-bottom: 15px; 
-        position: static;
-        text-align: center; 
-    }
-    #image {
-        max-width: 100px; 
-    }
-
-    .Image {
-        margin: 50px 0; 
-    }
-
-    
-}
