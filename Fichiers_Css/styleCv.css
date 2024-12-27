@@ -7,7 +7,7 @@ body {
     box-sizing: border-box;
     overflow: scroll;
 }
-/*Style sur le header, nav et logo y compris */
+/* Style sur le header, nav et logo y compris */
 .header {
     display: flex;
     justify-content: space-between;
@@ -16,12 +16,16 @@ body {
     height: 110px;
     padding: 0 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 4px solid #cfe2ff ;
+    border-bottom: 4px solid #cfe2ff;
+    z-index: 10; /* Toujours au-dessus */
+    position: relative; /* Nécessaire pour le z-index */
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    position: relative; /* Garantit que le logo reste dans le flux normal */
+    z-index: 20; /* Priorité sur le menu */
 }
 
 .logo {
@@ -32,7 +36,7 @@ body {
     border: 2px solid #0F056B;
     background-color: #0F056B;
     padding: 5px;
-    margin-right: 10px; /* Space between logo and title */
+    margin-right: 10px; /* Espace entre le logo et le titre */
 }
 
 .site-title {
@@ -43,15 +47,19 @@ body {
     margin: 0;
 }
 
+/* Menu de navigation pour les grands écrans */
 nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
+    
 }
 
 nav ul li {
     margin: 0 20px;
+    display: inline-block;
+    
 }
 
 nav ul li a {
@@ -64,13 +72,70 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    border-bottom: 2px solid white; /* White underline for the active link */
-    color: white; /* Ensures text remains white */
+    border-bottom: 2px solid white; /* Soulignement pour le lien actif */
+    color: white; /* Le texte reste blanc */
 }
+
 nav ul li a:hover {
     color: white;
     border-bottom: 2px solid #ffcc00;
 }
+
+
+
+.checkbtn
+{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check
+{
+    display: none;
+}
+@media (max-width: 952px)
+{
+    
+    nav ul li a 
+    {
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 110px; /* Ajustement en fonction de la hauteur du header */
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+     
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
 
 /* Style du footer des pages */
 
@@ -121,11 +186,6 @@ nav ul li a:hover {
     margin-top: 80px;
     margin-bottom: 80px;
     
-}
-#conteneur:hover
-{
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
 }
 
 /* Style sur le trait vertical separant les elements de gauche et ceux de droite de la page d'accueil*/
@@ -366,32 +426,14 @@ h4{
     margin-left: 120px;
     
 }
-/*Section des qualites de la page Accueil.html */
-
-.Qualites
-{
-    font-size: 25px;
-    text-transform: uppercase;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: bold;
-    font-style: normal;
-    color: #0F056B;
-    margin-left: 602px;
-    margin-top: -10px;
-    padding-bottom: 24px;
-}
-.liste-qualites 
-{   
-    list-style-type: none;
-    margin-top: -28px;
-    padding: 0px;
-}
 /* Section des Qualités */
 .qualites-container {
     display: flex;
     align-items: center; /* Pour aligner verticalement les éléments */
     justify-content: space-between;
     margin-top: 50px;
+    flex-wrap: wrap; /* Permet aux éléments de se déplacer sur plusieurs lignes si nécessaire */
+    gap: 20px; /* Ajoute un espacement entre les éléments */
 }
 
 /* Titre des Qualités */
@@ -404,7 +446,6 @@ h4{
     color: #0F056B;
     margin-bottom: 20px;
     margin-left: 150px;
-  
 }
 
 /* Liste des Qualités */
@@ -430,8 +471,9 @@ h4{
     margin-left: 21px; /* Ajout de l'espace entre l'image et la liste */
     object-fit: cover; /* Pour que l'image conserve ses proportions sans être déformée */
 }
-.qualites-container .pdf
-{
+
+/* Titre du PDF */
+.qualites-container .pdf {
     margin-top: -187px;
     margin-right: -459px;
     font-size: 25px;
@@ -442,18 +484,52 @@ h4{
     color: #0F056B;
 }
 
-/* Mobile - Mise en place de la disposition en colonne */
-@media (max-width: 768px) {
+/* Media Queries pour rendre le design responsive */
+@media screen and (max-width: 768px) {
+    /* Sur les écrans mobiles, réajuster la disposition */
     .qualites-container {
-        flex-direction: column; /* Passe en colonne pour les petits écrans */
-        align-items: center;
+        flex-direction: column; /* Passe la disposition en colonne */
+        align-items: center; /* Centre les éléments */
+        margin-top: 30px; /* Ajuste l'espace au-dessus */
     }
 
-    #image {
-        margin-left: 0;
-        margin-top: 20px; /* Espace au-dessus de l'image */
+    /* Réduire la taille du titre pour les petits écrans */
+    .Qualites {
+        font-size: 20px;
+        margin-left: 0; /* Enlève la marge gauche sur mobile */
+        text-align: center; /* Centrer le texte */
     }
+
+    /* Réduire la taille de la liste des qualités */
+    .liste-qualites {
+        margin-left: 0; /* Supprimer la marge gauche */
+        text-align: center; /* Centrer le texte */
+        font-size: 16px; /* Augmenter légèrement la taille du texte pour la lisibilité */
+    }
+
+    .liste-qualites li {
+        margin-bottom: 10px; /* Réduire l'espace entre les éléments */
+    }
+
+    /* Ajuster l'image QR code */
+    #image {
+        margin-left: 0; /* Supprimer la marge gauche */
+        margin-top: 20px; /* Réduire l'espace au-dessus */
+        width: 120px; /* Réduire la taille de l'image */
+        height: 120px; /* Réduire la hauteur de l'image */
+    }
+
+    /* Ajuster le titre "Format PDF du CV" */
+    .qualites-container .pdf {
+        margin-top: 20px; /* Réduire la marge au-dessus */
+        margin-right: 0; /* Supprimer la marge droite */
+        font-size: 20px; /* Réduire la taille du texte */
+        text-align: center; /* Centrer le texte */
+        font-weight: normal;
+    }
+    
 }
+
 
 
 
@@ -544,64 +620,53 @@ h4{
 }
 
 /* Conteneur des projets */
-
 .projects-container {
     display: flex;
-    gap: 0;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px; /* Espace entre les cartes */
+    justify-content: center;
     padding: 20px;
-    width: 1450px;
-}
-#conteneur1 .section4 h2
-{
-    font-size: 2.5rem; /* Taille en rem pour plus de flexibilité */
-    color: #0F056B;
-    text-align: center;
-    margin-top: 10px;
-}
-#conteneur1 .section4 p{
-    font-weight: bold;
-    font-size: 18px;
+    max-width: 100%;
+    margin: auto;
 }
 
 /* Élément de projet */
 .project-item {
     background-color: #ffffff;
     border-radius: 10px;
-    width: 605px;
+    width: calc(50% - 20px); /* 50% pour 2 cartes par ligne */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    margin: 10px;
+    margin: 10px 0; /* Marges verticales */
     position: relative;
-    margin-left: 70px;
 }
-.project-item button
-{
+
+/* Boutons du projet */
+.project-item button {
     margin-top: 30px;
     background-color: #0F056B;
     border: 1px solid #0F056B;
     width: 120px;
     height: 40px;
     border-radius: 5px;
-    
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-.project-item button a 
-{
+
+.project-item button a {
     color: white;
     text-decoration: none;
 }
-.project-item button:hover
-{
-    
+
+.project-item button:hover {
     background-color: rgb(240, 157, 5);
-    border: 1px solid rgb(240, 157, 5) ;
-   
+    border-color: rgb(240, 157, 5);
 }
-.project-item button a:hover
-{
+
+.project-item button a:hover {
     text-decoration: none;
     color: white;
 }
@@ -609,7 +674,7 @@ h4{
 /* Image du projet */
 .project-image {
     width: 100%;
-    height: 290px;
+    height: auto;
     object-fit: cover;
     border-radius: 5px;
     transition: transform 0.3s ease;
@@ -620,11 +685,32 @@ h4{
     transform: scale(1.05);
 }
 
+/* Titre du projet */
 .project-item h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: #34495e;
     margin-top: 15px;
     margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .project-item {
+        width: calc(50% - 20px); /* 2 cartes par ligne pour les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        width: 100%; /* 1 carte par ligne pour les petits écrans */
+    }
+}
+
+/* Grands écrans */
+@media (min-width: 1200px) {
+    .project-item {
+        width: calc(50% - 20px); /* Toujours 2 cartes par ligne */
+    }
 }
 
 /* Lien de vue */
@@ -786,29 +872,29 @@ h4{
     padding: 10px;
 }
 
-.parent .image, .parent1 .image {
+.parent .image, .parent1 .image, .parent2 .video, .parent3 .Images{
     width: 40%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
- .parent2 .Images , .parent3 .Images
- {
-    width: 40%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.image img:hover 
+
+.image img:hover,.Images img:hover 
 {
     transform: scale(0.9);
 }
 .image img
 {
     width: 100%;
-    
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+.video video
+{
+    width: 100%;
+    height: auto;
     object-fit: contain;
     object-position: center;
     transition: transform 0.3s ease;
@@ -822,23 +908,8 @@ h4{
     transition: transform 0.3s ease;
    
 }
-.Images img:hover{
-    transform: scale(0.9);
-}
-video
-{
-    transition: transform 0.3s ease;
-}
-iframe{
-    transition: transform 0.3s ease;
-}
-iframe:hover{
-    transform: scale(0.9);
-}
-video:hover 
-{
-    transform: scale(0.9);
-}
+
+
 /* Style pour les textes en span  */
 span {
     font-weight: bold;
@@ -943,7 +1014,7 @@ input[type="submit"]:hover , input[type="reset"]:hover
    background-color: #0F056B;
    color: #ffcc00;
    border: 1px solid #ffcc00;
-   transform: scale(1.02);
+   transform: scale(1.0);
 }
 .stylePlaceholder::placeholder
 {
@@ -959,6 +1030,625 @@ input[type="submit"]:hover , input[type="reset"]:hover
     opacity: 0.9; 
     padding: 10px 0px;
     font-family: "Century Gothic", Verdana, sans-serif;
+}
+/* Style pour le bouton du menu (fa-bars) */
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none; /* Initialement caché */
+}
+
+/* Le checkbox lui-même */
+#check {
+    display: none; /* Masque l'input checkbox */
+}
+
+/* Style du menu lorsque la case est cochée */
+#check:checked ~ nav ul {
+    left: 0; /* Déplace le menu pour l'afficher */
+}
+
+/* Les styles pour la version mobile */
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block; /* Affiche le bouton hamburger */
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 80px;
+        left: -100%; /* Menu caché par défaut */
+        text-align: center;
+        background-color: #0F056B;
+        transition: left 0.5s ease;
+        flex-direction: column; /* Affichage en colonne */
+        padding: 20px 0; /* Espacement pour les éléments du menu */
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Espacement vertical entre les éléments */
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        text-transform: none; /* Texte dans son format original */
+    }
+
+    /* Lorsque le menu est ouvert, on déplace à gauche à 0 pour afficher */
+    #check:checked ~ nav ul {
+        left: 0;
+    }
+
+    .site-title {
+        font-size: 1.1rem;
+    }
+    .form {
+        width: 90%;
+        margin: 10px auto;
+        margin-bottom: 150px;
+        height: 900px;
+    }
+ 
+    .form img {
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], textarea {
+        width: 87%;
+        margin: 10px 0;
+    }
+
+    .form p {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 89%;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+    #lastname , #num , textarea , input[type="submit"], input[type="reset"]{
+        margin-left: 40px;
+    }
+
+   
+}
+
+/* Responsive du formulaire de contact */
+
+@media (max-width: 420px) {
+
+    .form {
+        width: 90%;
+        margin: 10px auto;
+        margin-bottom: 150px;
+    }
+
+    .form img {
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], textarea {
+        width: 70%;
+        margin: 10px 0;
+    }
+
+    .form p {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 76%;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+    #lastname , #num , textarea , input[type="submit"], input[type="reset"]{
+        margin-left: 40px;
+    }
+    .site-title {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 421px) and (max-width: 547px)
+{
+    .form {
+        width: 90%;
+        margin: 10px auto;
+        margin-bottom: 150px;
+    }
+
+    .form img {
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], textarea {
+        width: 77%;
+        margin: 10px 0;
+    }
+
+    .form p {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 82%;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+    #lastname , #num , textarea , input[type="submit"], input[type="reset"]{
+        margin-left: 40px;
+    }
+}
+@media screen and (min-width: 548px) and (max-width: 857px)
+{
+    .form {
+        width: 90%;
+        margin: 10px auto;
+        margin-bottom: 150px;
+    }
+
+    .form img {
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], textarea {
+        width: 82%;
+        margin: 10px 0;
+    }
+
+    .form p {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 84%;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+    #lastname , #num , textarea , input[type="submit"], input[type="reset"]{
+        margin-left: 40px;
+    }
+}
+@media screen and (min-width: 711px) and (max-width: 857px)
+{
+    .form {
+        width: 90%;
+        margin: 10px auto;
+        margin-bottom: 150px;
+    }
+
+    .form img {
+        width: 80px;
+        height: 80px;
+        margin-top: 10px;
+    }
+
+    input[type="text"], input[type="email"], input[type="number"], textarea {
+        width: 85%;
+        margin: 10px 0;
+    }
+
+    .form p {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+        width: 87%;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+    #lastname , #num , textarea , input[type="submit"], input[type="reset"]{
+        margin-left: 40px;
+    }
+}
+
+
+/* Media Query pour les petits écrans page Loisir*/
+
+@media screen and (max-width: 768px) {
+    .parent, .parent1, .parent2, .parent3 {
+        flex-direction: column; 
+        
+    }
+    .image {
+        position: relative;
+        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
+    }
+    .video{
+        position: relative;
+        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
+    }
+    video 
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .image iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .parent2 .video, .parent3 .Images {
+        width: 100%; /* Prend toute la largeur sur mobile */
+        margin-bottom: 20px; /* Espacement si nécessaire */
+    }
+    
+    .parent .texte, .parent1 .texte, .parent2 .texte, .parent3 .texte {
+        width: 95%;
+        padding: 15px;
+        font-size: 1rem; /* Réduction de la taille de la police */
+        line-height: 1.5; /* Ajustement de l'espacement */
+        text-align: left; /* Alignement à gauche */
+    }
+
+    .parent .image, .parent1 .image {
+        width: 100%;
+        height: auto;
+    }
+    .parent1 .image
+    {
+        margin-bottom: -205px;
+    }
+}
+/* Media Query pour les tablettes page  Loisir.html*/
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    
+    .parent, .parent1, .parent2, .parent3 {
+        flex-direction: column; 
+        
+    }
+    .image {
+        position: relative;
+        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
+    }
+    .video{
+        position: relative;
+        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
+    }
+    video 
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .image iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .parent2 .video, .parent3 .Images {
+        width: 100%; /* Prend toute la largeur sur mobile */
+        margin-bottom: 20px; /* Espacement si nécessaire */
+    }
+    
+    .parent .texte, .parent1 .texte, .parent2 .texte, .parent3 .texte {
+        width: 95%;
+        padding: 15px;
+        font-size: 1rem; /* Réduction de la taille de la police */
+        line-height: 1.5; /* Ajustement de l'espacement */
+        text-align: left; /* Alignement à gauche */
+    }
+
+    .parent .image, .parent1 .image {
+        width: 100%;
+        height: auto;
+    }
+    .parent1 .image
+    {
+        margin-bottom: -260px;
+        margin-top: 40px;
+        
+    }
+}
+
+@media (max-width: 768px)
+{
+  
+    #conteneur1 .right h1 
+    {
+        font-size: 65px;
+        font-weight: normal;
+    }
+    #conteneur1 .right p{
+        font-size: 14px;
+      
+    }
+    .section3
+    {
+        margin-bottom: 100px;
+    }
+    .section1
+    {
+        margin-top: 20px;
+    }
+    .section1 p, .section2 p, .section3 p {
+        font-size: 1rem; /* Réduction de la taille de la police */
+        line-height: 1.5; /* Ajustement de l'espacement */
+        text-align: left; /* Alignement à gauche */
+    }
+
+
+
+
+}
+/* Responsive Design pour les écrans mobiles */
+@media (max-width: 768px) {
+    /* Conteneur principal */
+    #conteneur {
+        flex-direction: column; /* Empile les éléments verticalement */
+        height: auto; /* Ajuste automatiquement la hauteur */
+        width: 90%; /* Réduit la largeur pour s'adapter à l'écran */
+        margin: 20px auto; /* Centré avec des marges réduites */
+    }
+
+    /* Élément gauche (coordonnées, langues, etc.) */
+    .left {
+        width: 100%; /* Prend toute la largeur */
+        text-align: center; /* Centre les éléments */
+    }
+
+    .left img {
+        height: 150px; /* Réduit la taille de l'image */
+        margin: 20px auto; /* Centré avec des marges réduites */
+    }
+
+    /* Section Coordonnées */
+    .coordonnees {
+        width: 87.5%; /* Adapte à la largeur de l'écran */
+        border-top-right-radius: 0; /* Supprime le rayon arrondi */
+        padding: 20px; /* Réduit les marges internes */
+        height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+    }
+
+    .coordonnees h4 {
+        text-align: center; /* Centre les titres */
+        margin-left: 0; /* Supprime le décalage gauche */
+        font-size: 18px; /* Réduit légèrement la taille des titres */
+        margin-bottom: 10px; /* Ajoute un espace après les titres */
+    }
+
+    .coordonnees ul {
+        padding: 0; /* Supprime les marges internes */
+        margin: 0; /* Supprime les marges externes */
+    }
+
+    .coordonnees ul li {
+        font-size: 14px; /* Ajuste la taille du texte */
+        margin: 10px auto; /* Centre chaque élément */
+        text-align: center; /* Centre le contenu */
+        display: block; /* Force l'affichage en bloc */
+        color: #0F056B; /* Maintient la couleur */
+    }
+
+    .coordonnees ul li i {
+        padding-right: 10px; /* Ajuste l'espace entre l'icône et le texte */
+    }
+
+    /* Barre de progression dans les langues */
+    .langue-item {
+        flex-direction: column; /* Empile les langues et les barres verticalement */
+        align-items: center; /* Centre le contenu */
+    }
+
+    .langue-item span {
+        margin: 0; /* Supprime les marges pour un meilleur alignement */
+        text-align: center; /* Centre les noms de langues */
+    }
+
+    .progress-bar {
+        width: 80%; /* Ajuste la largeur des barres */
+        margin: 10px 0; /* Ajoute un espace autour */
+    }
+    /* Élément droit (titre, description) */
+    .right h1 {
+        font-size: 40px; /* Réduit la taille du titre */
+        margin-left: 0; /* Centré automatiquement */
+        text-align: center;
+    }
+
+    .right p {
+        font-size: 16px; /* Réduit la taille de la description */
+        margin-left: 0;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* Section colorée */
+    .color {
+       display: none;
+    }
+
+    /* Trait vertical */
+    .vertical-line {
+        display: none; /* Masque le trait vertical sur mobile */
+    }
+}
+@media (max-width: 815px) {
+
+    #image {
+    width: 100px; 
+    margin: 20px auto; 
+    padding: 0; 
+    display: block; 
+    position: static; 
+    height: auto; 
+    
+    }
+    .formation {
+        margin-top: 50px; 
+        padding: 0px 15px; 
+    }
+
+    .formation h2,
+    .formation .projets, .Qualites
+     {
+        font-size: 18px; 
+        text-align: center; 
+        margin: 20px 0;
+    }
+    .Image {
+        text-align: center; 
+        margin: 50px 0;
+    }
+    
+    .formation-item {
+        flex-direction: column; 
+        align-items: flex-start; 
+        margin-bottom: 20px;
+    }
+
+    .fleft, .fright {
+        text-align: left; 
+        margin: 0; 
+    }
+
+    .fleft h3, 
+    .fleft p, 
+    .fright h3, 
+    .fright .date {
+        font-size: 12px; 
+        padding: 0; 
+        margin: 5px 0; 
+    }
+
+    .fleft ul li {
+        width: auto; 
+        margin-left: 0; 
+        font-size: 12px; 
+    }
+
+    .liste-qualites li {
+        font-size: 12px; 
+        margin-bottom: 15px; 
+        position: static;
+        text-align: center; 
+    }
+    #image {
+        max-width: 100px; 
+    }
+
+    .Image {
+        margin: 50px 0; 
+    }
+
+    
+}
+
+/* Responsive Très petits écrans (téléphones compacts) */
+@media (max-width: 480px) {
+
+    #conteneur {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .left img {
+        height: 120px;
+    }
+
+    .right h1 {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+
+    .right p {
+        font-size: 14px;
+    }
+
+    .color {
+        display: none;
+    }
+    .formation h2, .formation .projets {
+        font-size: 20px;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: normal;
+        
+    }
+   
+    .Qualites
+    {
+        font-weight: normal;
+        
+    }
+   
+
+    .formation-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fleft h3, .fleft .universite, .fleft ul li {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .fright {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .fright h3, .fright .date {
+        margin-left: 0;
+        font-size: 12px;
+    }
+    
+
+    #image {
+        width: 70px;
+       
+    }
+   
 }
 
 
