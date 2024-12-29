@@ -5,9 +5,11 @@ body {
     font-family: "Century Gothic", Verdana, sans-serif;
     background-color: #ffffff;
     box-sizing: border-box;
-    overflow: scroll;
+    transition: filter 0.3s ease;
+    overflow-x: hidden;
 }
-/* Style sur le header, nav et logo y compris */
+
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -17,15 +19,15 @@ body {
     padding: 0 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-bottom: 4px solid #cfe2ff;
-    z-index: 10; /* Toujours au-dessus */
-    position: relative; /* Nécessaire pour le z-index */
+    z-index: 10;
+    position: relative;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    position: relative; /* Garantit que le logo reste dans le flux normal */
-    z-index: 20; /* Priorité sur le menu */
+    position: relative; 
+    z-index: 20; 
 }
 
 .logo {
@@ -36,7 +38,7 @@ body {
     border: 2px solid #0F056B;
     background-color: #0F056B;
     padding: 5px;
-    margin-right: 10px; /* Espace entre le logo et le titre */
+    margin-right: 10px; 
 }
 
 .site-title {
@@ -47,19 +49,17 @@ body {
     margin: 0;
 }
 
-/* Menu de navigation pour les grands écrans */
+
+/* Navigation */
 nav ul {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
-    
 }
 
 nav ul li {
     margin: 0 20px;
-    display: inline-block;
-    
 }
 
 nav ul li a {
@@ -72,8 +72,8 @@ nav ul li a {
 }
 
 nav ul li a.active {
-    border-bottom: 2px solid white; /* Soulignement pour le lien actif */
-    color: white; /* Le texte reste blanc */
+    border-bottom: 2px solid white;
+    color: white;
 }
 
 nav ul li a:hover {
@@ -81,59 +81,17 @@ nav ul li a:hover {
     border-bottom: 2px solid #ffcc00;
 }
 
-
-
-.checkbtn
-{
+/* Burger Menu */
+.checkbtn {
     font-size: 30px;
     color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
     cursor: pointer;
+    display: none; 
+}
+
+/* Checkbox hidden */
+#check {
     display: none;
-}
-#check
-{
-    display: none;
-}
-@media (max-width: 952px)
-{
-    
-    nav ul li a 
-    {
-        font-size: 16px;
-    }
-}
-@media (max-width: 858px) {
-    .checkbtn {
-        display: block;
-    }
-
-    ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        top: 110px; /* Ajustement en fonction de la hauteur du header */
-        left: -100%;
-        text-align: center;
-        transition: all 0.5s;
-     
-    }
-
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-
-    nav ul li a {
-        font-size: 20px;
-    }
-
-    #check:checked ~ ul {
-        left: 0;
-    }
 }
 
 
@@ -173,9 +131,10 @@ nav ul li a:hover {
     margin-top: 15px; 
 }
 
+/* Style sur le conteneur de la page d'accueil*/
 #conteneur {
     
-    height: 1350px; 
+    height: 1400px; 
     border: 4px solid #0F056B;
     margin: 30px auto;
     display: flex;
@@ -192,7 +151,7 @@ nav ul li a:hover {
 
 .vertical-line {
     width: 3px; 
-    height: 71%; 
+    height: 72%; 
     position: absolute; 
     left: 39%; 
     transform: translateX(-40%); 
@@ -256,7 +215,7 @@ nav ul li a:hover {
     width: 315px;
     background-color: #cfe2ff;
     padding-top: 45px;
-    height: 983px;
+    height: 1034px;
     border: 1px solid #cfe2ff;
     border-top-right-radius: 250px;
     padding-bottom: 5px;
@@ -429,11 +388,11 @@ h4{
 /* Section des Qualités */
 .qualites-container {
     display: flex;
-    align-items: center; /* Pour aligner verticalement les éléments */
+    align-items: center; 
     justify-content: space-between;
     margin-top: 50px;
-    flex-wrap: wrap; /* Permet aux éléments de se déplacer sur plusieurs lignes si nécessaire */
-    gap: 20px; /* Ajoute un espacement entre les éléments */
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
 
 /* Titre des Qualités */
@@ -468,10 +427,9 @@ h4{
     margin-top: 50px;
     width: 150px;
     height: 138px;
-    margin-left: 21px; /* Ajout de l'espace entre l'image et la liste */
-    object-fit: cover; /* Pour que l'image conserve ses proportions sans être déformée */
+    margin-left: 21px; 
+    object-fit: cover; 
 }
-
 /* Titre du PDF */
 .qualites-container .pdf {
     margin-top: -187px;
@@ -483,54 +441,6 @@ h4{
     font-style: normal;
     color: #0F056B;
 }
-
-/* Media Queries pour rendre le design responsive */
-@media screen and (max-width: 768px) {
-    /* Sur les écrans mobiles, réajuster la disposition */
-    .qualites-container {
-        flex-direction: column; /* Passe la disposition en colonne */
-        align-items: center; /* Centre les éléments */
-        margin-top: 30px; /* Ajuste l'espace au-dessus */
-    }
-
-    /* Réduire la taille du titre pour les petits écrans */
-    .Qualites {
-        font-size: 20px;
-        margin-left: 0; /* Enlève la marge gauche sur mobile */
-        text-align: center; /* Centrer le texte */
-    }
-
-    /* Réduire la taille de la liste des qualités */
-    .liste-qualites {
-        margin-left: 0; /* Supprimer la marge gauche */
-        text-align: center; /* Centrer le texte */
-        font-size: 16px; /* Augmenter légèrement la taille du texte pour la lisibilité */
-    }
-
-    .liste-qualites li {
-        margin-bottom: 10px; /* Réduire l'espace entre les éléments */
-    }
-
-    /* Ajuster l'image QR code */
-    #image {
-        margin-left: 0; /* Supprimer la marge gauche */
-        margin-top: 20px; /* Réduire l'espace au-dessus */
-        width: 120px; /* Réduire la taille de l'image */
-        height: 120px; /* Réduire la hauteur de l'image */
-    }
-
-    /* Ajuster le titre "Format PDF du CV" */
-    .qualites-container .pdf {
-        margin-top: 20px; /* Réduire la marge au-dessus */
-        margin-right: 0; /* Supprimer la marge droite */
-        font-size: 20px; /* Réduire la taille du texte */
-        text-align: center; /* Centrer le texte */
-        font-weight: normal;
-    }
-    
-}
-
-
 
 
 /* Conteneur principal de la page A propos */
@@ -546,7 +456,7 @@ h4{
 
 /* Titre du conteneur principal */
 #conteneur1 .right h1 {
-    font-size: 5.5rem; /* Taille en rem pour plus de flexibilité */
+    font-size: 5.5rem; 
     color: #0F056B;
     text-align: center;
     margin-top: 10px;
@@ -554,12 +464,11 @@ h4{
 }
 
 #conteneur1 .right p {
-    font-size: 1.75rem; /* Taille en rem pour plus de flexibilité */
+    font-size: 1.75rem; 
     color: #0F056B;
     text-align: center;
     font-weight: normal;
     margin-bottom: 40px;
-  
 }
 
 /* Sections */
@@ -622,13 +531,23 @@ h4{
 /* Conteneur des projets */
 .projects-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: row;
     gap: 20px; /* Espace entre les cartes */
     justify-content: center;
     padding: 20px;
     max-width: 100%;
     margin: auto;
 }
+.projects-container1 {
+    display: flex;
+    flex-wrap: row;
+    gap: 20px; /* Espace entre les cartes */
+    justify-content: center;
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+}
+
 
 /* Élément de projet */
 .project-item {
@@ -693,25 +612,7 @@ h4{
     margin-bottom: 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .project-item {
-        width: calc(50% - 20px); /* 2 cartes par ligne pour les écrans moyens */
-    }
-}
 
-@media (max-width: 768px) {
-    .project-item {
-        width: 100%; /* 1 carte par ligne pour les petits écrans */
-    }
-}
-
-/* Grands écrans */
-@media (min-width: 1200px) {
-    .project-item {
-        width: calc(50% - 20px); /* Toujours 2 cartes par ligne */
-    }
-}
 
 /* Lien de vue */
 .view-link {
@@ -880,6 +781,8 @@ h4{
     align-items: center;
 }
 
+
+
 .image img:hover,.Images img:hover 
 {
     transform: scale(0.9);
@@ -985,8 +888,6 @@ textarea
     margin: 0px 40px;
     padding-left: 10px;
     padding-right: 5px;
-   
-   
 }
 input[type="submit"]{
     background-color:  #210aec;
@@ -1031,31 +932,58 @@ input[type="submit"]:hover , input[type="reset"]:hover
     padding: 10px 0px;
     font-family: "Century Gothic", Verdana, sans-serif;
 }
-/* Style pour le bouton du menu (fa-bars) */
-.checkbtn {
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none; /* Initialement caché */
+
+
+/* Aspect Responsive de tout le site web grace aux medias queries  */
+
+
+/* Responsiite du header et du nav sur mobile */
+
+@media (max-width: 858px) {
+    
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: left; 
+        
+    }
+
+   
+    .logo-container {
+        flex-grow: 1;
+        justify-content: flex-start; 
+    }
+
+    
+    .checkbtn {
+        display: block;
+        cursor: pointer;
+    }
+
+   
+    nav ul li {
+        margin: 20px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        color: white;
+    }
+
+    
+    #check:checked ~ ul {
+        left: 0;
+    }
+
+  
+    #check:checked ~ .header + * {
+        display: none;
+    }
 }
 
-/* Le checkbox lui-même */
-#check {
-    display: none; /* Masque l'input checkbox */
-}
-
-/* Style du menu lorsque la case est cochée */
-#check:checked ~ nav ul {
-    left: 0; /* Déplace le menu pour l'afficher */
-}
-
-/* Les styles pour la version mobile */
 @media (max-width: 858px) {
     .checkbtn {
-        display: block; /* Affiche le bouton hamburger */
+        display: block; 
     }
 
     nav ul {
@@ -1063,24 +991,23 @@ input[type="submit"]:hover , input[type="reset"]:hover
         width: 100%;
         height: 100vh;
         top: 80px;
-        left: -100%; /* Menu caché par défaut */
+        left: -100%; 
         text-align: center;
         background-color: #0F056B;
         transition: left 0.5s ease;
-        flex-direction: column; /* Affichage en colonne */
-        padding: 20px 0; /* Espacement pour les éléments du menu */
+        flex-direction: column; 
+        padding: 20px 0; 
     }
 
     nav ul li {
-        margin: 20px 0; /* Espacement vertical entre les éléments */
+        margin: 20px 0; 
     }
 
     nav ul li a {
         font-size: 20px;
-        text-transform: none; /* Texte dans son format original */
+        text-transform: none;
     }
 
-    /* Lorsque le menu est ouvert, on déplace à gauche à 0 pour afficher */
     #check:checked ~ nav ul {
         left: 0;
     }
@@ -1261,6 +1188,50 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin-left: 40px;
     }
 }
+/* Responsive A propos.html */
+
+@media (max-width: 1024px) 
+{
+    .project-item {
+        width: calc(50% - 20px); /* 2 cartes par ligne pour les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .project-item button {
+     
+        width: 100px;
+        height: 40px;
+
+    }
+    .project-item button a {
+        
+        font-size: 12px;
+    }
+    .project-item {
+        width: 100%; 
+    }
+    
+    .project-item h3 {
+        font-size: 1.0rem;
+   
+    }
+    .projects-container, .projects-container1 {
+        display: flex;
+        flex-wrap: wrap;
+  
+    }
+
+}
+
+/* Grands écrans */
+@media (min-width: 1200px) {
+    .project-item {
+        width: calc(50% - 20px); /* Toujours 2 cartes par ligne */
+    }
+}
+
 
 
 /* Media Query pour les petits écrans page Loisir*/
@@ -1272,19 +1243,19 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
     .image {
         position: relative;
-        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
+        padding-bottom: 56.25%; 
         height: 0;
         overflow: hidden;
         max-width: 100%;
-        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
+        margin-bottom: 20px; 
     }
     .video{
         position: relative;
-        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
+        padding-bottom: 56.25%; 
         height: 0;
         overflow: hidden;
         max-width: 100%;
-        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
+        margin-bottom: 20px; 
     }
     video 
     {
@@ -1303,16 +1274,16 @@ input[type="submit"]:hover , input[type="reset"]:hover
         height: 100%;
     }
     .parent2 .video, .parent3 .Images {
-        width: 100%; /* Prend toute la largeur sur mobile */
-        margin-bottom: 20px; /* Espacement si nécessaire */
+        width: 100%; 
+        margin-bottom: 20px; 
     }
     
     .parent .texte, .parent1 .texte, .parent2 .texte, .parent3 .texte {
         width: 95%;
         padding: 15px;
-        font-size: 1rem; /* Réduction de la taille de la police */
-        line-height: 1.5; /* Ajustement de l'espacement */
-        text-align: left; /* Alignement à gauche */
+        font-size: 1rem; 
+        line-height: 1.5; 
+        text-align: left; 
     }
 
     .parent .image, .parent1 .image {
@@ -1321,10 +1292,12 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
     .parent1 .image
     {
-        margin-bottom: -205px;
+        margin-bottom: -183px;
+        margin-top: -40px;
     }
 }
 /* Media Query pour les tablettes page  Loisir.html*/
+
 @media screen and (min-width: 768px) and (max-width: 900px) {
     
     .parent, .parent1, .parent2, .parent3 {
@@ -1333,19 +1306,19 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
     .image {
         position: relative;
-        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
+        padding-bottom: 56.25%; 
         height: 0;
         overflow: hidden;
         max-width: 100%;
-        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
+        margin-bottom: 20px; 
     }
     .video{
         position: relative;
-        padding-bottom: 56.25%; /* Ratio d'aspect 16:9 */
+        padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
         max-width: 100%;
-        margin-bottom: 20px; /* Ajoute un espacement sous l'image ou la vidéo */
+        margin-bottom: 20px; 
     }
     video 
     {
@@ -1364,28 +1337,24 @@ input[type="submit"]:hover , input[type="reset"]:hover
         height: 100%;
     }
     .parent2 .video, .parent3 .Images {
-        width: 100%; /* Prend toute la largeur sur mobile */
-        margin-bottom: 20px; /* Espacement si nécessaire */
+        width: 100%; 
+        margin-bottom: 20px;
     }
     
     .parent .texte, .parent1 .texte, .parent2 .texte, .parent3 .texte {
         width: 95%;
         padding: 15px;
-        font-size: 1rem; /* Réduction de la taille de la police */
-        line-height: 1.5; /* Ajustement de l'espacement */
-        text-align: left; /* Alignement à gauche */
+        font-size: 1rem; 
+        line-height: 1.5; 
+        text-align: left; 
     }
 
     .parent .image, .parent1 .image {
         width: 100%;
         height: auto;
     }
-    .parent1 .image
-    {
-        margin-bottom: -260px;
-        margin-top: 40px;
-        
-    }
+  
+    
 }
 
 @media (max-width: 768px)
@@ -1393,11 +1362,13 @@ input[type="submit"]:hover , input[type="reset"]:hover
   
     #conteneur1 .right h1 
     {
-        font-size: 65px;
+        font-size: 50px;
         font-weight: normal;
+        text-align: left;
+      
     }
     #conteneur1 .right p{
-        font-size: 14px;
+        font-size: 14.5px;
       
     }
     .section3
@@ -1409,181 +1380,208 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin-top: 20px;
     }
     .section1 p, .section2 p, .section3 p {
-        font-size: 1rem; /* Réduction de la taille de la police */
-        line-height: 1.5; /* Ajustement de l'espacement */
-        text-align: left; /* Alignement à gauche */
+        font-size: 1rem; 
+        line-height: 1.5; 
+        text-align: left; 
+    }
+}
+
+/* Responsive de la page Accueil.html */
+
+@media (max-width: 768px) {
+    body #conteneur {
+        margin-bottom: 100px;
+        width: 90%; 
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
     }
 
+    .coordonnees {
+        width: 75%; 
+        margin: 40px auto; 
+        height: auto; 
+        padding: 20px; 
+        border-top-right-radius: 50px; 
+    }
 
+    .coordonnees h4 {
+        font-size: 16px; 
+        margin-left: 10px; 
+        text-align: left; 
+        font-weight: normal;
+    }
 
+    .coordonnees ul li {
+        font-size: 12px; 
+        margin-bottom: 15px; 
+        text-align: left; 
+        margin-left: -5px;
+    }
 
-}
-/* Responsive Design pour les écrans mobiles */
-@media (max-width: 768px) {
-    /* Conteneur principal */
-    #conteneur {
-        flex-direction: column; /* Empile les éléments verticalement */
-        height: auto; /* Ajuste automatiquement la hauteur */
-        width: 90%; /* Réduit la largeur pour s'adapter à l'écran */
-        margin: 20px auto; /* Centré avec des marges réduites */
+    .coordonnees ul li i {
+        padding-right: 10px; 
+    }
+
+    .langues li {
+        margin-bottom: 5px; 
+    }
+
+    .langue-item {
+        flex-direction: column; 
+        align-items: center;
+        gap: 5px; 
+    }
+
+    .langue-item span {
+        font-size: 12px; 
+        margin-left: -170px;
+    }
+
+    .progress-bar {
+        width: 40px; 
+        margin-left: -40px;
+        margin-top: -15px;
+        background-color: white;
+    }
+
+    body .footer {
+        width: 100%;
+    }
+
+    .progress {
+        height: 8px; 
+    }
+
+    .vertical-line, .color {
+        display: none; 
     }
 
     /* Élément gauche (coordonnées, langues, etc.) */
     .left {
-        width: 100%; /* Prend toute la largeur */
-        text-align: center; /* Centre les éléments */
+        width: 100%; 
+        text-align: center; 
     }
 
     .left img {
-        height: 150px; /* Réduit la taille de l'image */
-        margin: 20px auto; /* Centré avec des marges réduites */
+        height: 150px; 
+        margin: 20px auto; 
     }
 
-    /* Section Coordonnées */
+    .right h1 {
+        font-size: 35px;
+        margin-top: 20px;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .right p {
+        font-size: 18px;
+        margin-top: 5px;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: -30px;
+        text-align: center;
+    }
+
+    .Image {
+        text-align: center; 
+        margin: 75px 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1124px) {
+    #conteneur {
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+
     .coordonnees {
-        width: 87.5%; /* Adapte à la largeur de l'écran */
-        border-top-right-radius: 0; /* Supprime le rayon arrondi */
-        padding: 20px; /* Réduit les marges internes */
-        height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+        width: 80%; 
+        margin: 20px auto; 
+        height: auto; 
+        padding: 30px; 
+        border-top-right-radius: 100px; 
     }
 
     .coordonnees h4 {
-        text-align: center; /* Centre les titres */
-        margin-left: 0; /* Supprime le décalage gauche */
-        font-size: 18px; /* Réduit légèrement la taille des titres */
-        margin-bottom: 10px; /* Ajoute un espace après les titres */
-    }
-
-    .coordonnees ul {
-        padding: 0; /* Supprime les marges internes */
-        margin: 0; /* Supprime les marges externes */
+        font-size: 18px; 
+        margin-left: 20px; 
+        text-align: left; 
+        font-weight: normal;
     }
 
     .coordonnees ul li {
-        font-size: 14px; /* Ajuste la taille du texte */
-        margin: 10px auto; /* Centre chaque élément */
-        text-align: center; /* Centre le contenu */
-        display: block; /* Force l'affichage en bloc */
-        color: #0F056B; /* Maintient la couleur */
+        font-size: 14px; 
+        margin-bottom: 20px; 
+        text-align: left; 
     }
 
     .coordonnees ul li i {
-        padding-right: 10px; /* Ajuste l'espace entre l'icône et le texte */
+        padding-right: 12px; 
     }
 
-    /* Barre de progression dans les langues */
+    .langues li {
+        margin-bottom: 10px; 
+    }
+
     .langue-item {
-        flex-direction: column; /* Empile les langues et les barres verticalement */
-        align-items: center; /* Centre le contenu */
+        flex-direction: row; 
+        align-items: center; 
+        gap: 15px; 
     }
 
     .langue-item span {
-        margin: 0; /* Supprime les marges pour un meilleur alignement */
-        text-align: center; /* Centre les noms de langues */
+        font-size: 14px; 
+        margin-left: 40; 
     }
 
     .progress-bar {
-        width: 80%; /* Ajuste la largeur des barres */
-        margin: 10px 0; /* Ajoute un espace autour */
+        width: 60px; 
     }
-    /* Élément droit (titre, description) */
+
+    .progress {
+        height: 10px; 
+    }
+}
+
+/* Écrans intermédiaires (tablettes) page Accueil.html */
+
+@media (max-width: 1275px) {
+    #conteneur {
+        width: 90%; 
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        height: auto;
+    }
+
+    .vertical-line, .color {
+        display: none; 
+    }
+
+    .left img {
+        height: 180px;
+        margin: 20px;
+    }
+
     .right h1 {
-        font-size: 40px; /* Réduit la taille du titre */
-        margin-left: 0; /* Centré automatiquement */
+        margin-left: 0;
+        margin-top: 50px;
+        font-size: 50px;
         text-align: center;
     }
 
     .right p {
-        font-size: 16px; /* Réduit la taille de la description */
         margin-left: 0;
         text-align: center;
-        margin-top: 10px;
     }
-
-    /* Section colorée */
-    .color {
-       display: none;
-    }
-
-    /* Trait vertical */
-    .vertical-line {
-        display: none; /* Masque le trait vertical sur mobile */
-    }
-}
-@media (max-width: 815px) {
-
-    #image {
-    width: 100px; 
-    margin: 20px auto; 
-    padding: 0; 
-    display: block; 
-    position: static; 
-    height: auto; 
-    
-    }
-    .formation {
-        margin-top: 50px; 
-        padding: 0px 15px; 
-    }
-
-    .formation h2,
-    .formation .projets, .Qualites
-     {
-        font-size: 18px; 
-        text-align: center; 
-        margin: 20px 0;
-    }
-    .Image {
-        text-align: center; 
-        margin: 50px 0;
-    }
-    
-    .formation-item {
-        flex-direction: column; 
-        align-items: flex-start; 
-        margin-bottom: 20px;
-    }
-
-    .fleft, .fright {
-        text-align: left; 
-        margin: 0; 
-    }
-
-    .fleft h3, 
-    .fleft p, 
-    .fright h3, 
-    .fright .date {
-        font-size: 12px; 
-        padding: 0; 
-        margin: 5px 0; 
-    }
-
-    .fleft ul li {
-        width: auto; 
-        margin-left: 0; 
-        font-size: 12px; 
-    }
-
-    .liste-qualites li {
-        font-size: 12px; 
-        margin-bottom: 15px; 
-        position: static;
-        text-align: center; 
-    }
-    #image {
-        max-width: 100px; 
-    }
-
-    .Image {
-        margin: 50px 0; 
-    }
-
-    
 }
 
 /* Responsive Très petits écrans (téléphones compacts) */
-@media (max-width: 480px) {
 
+@media (max-width: 480px) {
     #conteneur {
         flex-direction: column;
         align-items: center;
@@ -1592,36 +1590,34 @@ input[type="submit"]:hover , input[type="reset"]:hover
     }
 
     .left img {
-        height: 120px;
+        height: 180px;
+        margin: 20px;
     }
 
     .right h1 {
-        font-size: 25px;
+        font-size: 39px;
         margin-top: 10px;
     }
 
     .right p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .color {
         display: none;
     }
+
     .formation h2, .formation .projets {
         font-size: 20px;
         margin: 0 auto;
         text-align: center;
         margin-bottom: 20px;
         font-weight: normal;
-        
     }
-   
-    .Qualites
-    {
+
+    .Qualites {
         font-weight: normal;
-        
     }
-   
 
     .formation-item {
         flex-direction: column;
@@ -1642,13 +1638,154 @@ input[type="submit"]:hover , input[type="reset"]:hover
         margin-left: 0;
         font-size: 12px;
     }
-    
 
     #image {
         width: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .formation-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .fright {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+
+    #image {
+        width: 80px;
+    }
+}
+
+@media (max-width: 815px) {
+    #image {
+        width: 100px; 
+        margin: 20px auto; 
+        padding: 0; 
+        display: block; 
+        position: static; 
+        height: auto; 
+    }
+
+    .formation {
+        margin-top: 50px; 
+        padding: 0px 15px; 
+    }
+
+    .formation h2,
+    .formation .projets, 
+    .Qualites {
+        font-size: 18px; 
+        text-align: center; 
+        margin: 20px 0;
+    }
+
+    .Image {
+        text-align: center; 
+        margin: 50px 0;
+    }
+
+    .formation-item {
+        flex-direction: column; 
+        align-items: flex-start; 
+        margin-bottom: 20px;
+    }
+
+    .fleft, .fright {
+        text-align: left; 
+        margin: 0; 
+    }
+
+    .fleft h3, .fleft p, .fright h3, .fright .date {
+        font-size: 12px; 
+        padding: 0; 
+        margin: 5px 0; 
+    }
+
+    .fleft ul li {
+        width: auto; 
+        margin-left: 0; 
+        font-size: 12px; 
+    }
+
+    .liste-qualites li {
+        font-size: 12px; 
+        margin-bottom: 15px; 
+        position: static;
+        text-align: center; 
+    }
+
+    #image {
+        max-width: 100px; 
+    }
+
+    .Image {
+        margin: 50px 0; 
+    }
+    .section6 h2 {
+        font-size: 1.5rem;
        
     }
-   
+    
+    .section6 p {
+        font-size: 0.9rem;
+       
+    }
+    
 }
+/* Media Queries de la partie qualité page d'accueil */
+
+@media screen and (max-width: 768px) {
+
+    .qualites-container {
+        flex-direction: column; 
+        align-items: center;
+        margin-top: 30px; 
+    }
+
+    
+    .Qualites {
+        font-size: 20px;
+        margin-left: 0; 
+        text-align: center; 
+    }
+
+    
+    .liste-qualites {
+        margin-left: 0; 
+        text-align: center; 
+        font-size: 16px;
+    }
+
+    .liste-qualites li {
+        margin-bottom: 10px; 
+    }
+
+    /* Ajuster l'image QR code */
+    #image {
+        margin-left: 0; 
+        margin-top: 20px; 
+        width: 120px; 
+        height: 120px; 
+    }
+
+    /* Ajuster le titre "Format PDF du CV" */
+    .qualites-container .pdf {
+        margin-top: 20px; 
+        margin-right: 0; 
+        font-size: 20px;
+        text-align: center; 
+        font-weight: normal;
+    }
+    
+}
+
 
 
