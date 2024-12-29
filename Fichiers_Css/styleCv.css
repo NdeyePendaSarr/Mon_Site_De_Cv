@@ -419,20 +419,20 @@ h4{
 }
 
 .liste-qualites li {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 /* Image QR Code */
 #image {
-    margin-top: 50px;
+    margin-top: 40px;
     width: 150px;
-    height: 138px;
+    height: 152px;
     margin-left: 21px; 
     object-fit: cover; 
 }
 /* Titre du PDF */
 .qualites-container .pdf {
-    margin-top: -187px;
+    margin-top: -180px;
     margin-right: -459px;
     font-size: 25px;
     text-transform: uppercase;
@@ -899,6 +899,7 @@ input[type="reset"]{
     background-color: white;
     color: #210aec;
     border: 1px solid white;
+    font-weight: bold;
 }
 input[type="submit"] , input[type="reset"]
 {
